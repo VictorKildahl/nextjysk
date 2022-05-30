@@ -30,9 +30,7 @@ const Home: NextPage = () => {
 
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h2>Learn &rarr;</h2>
-            <p className="underline text-lg">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
+            <p className="underline text-lg">Learn about Next.js in</p>
           </a>
 
           <a
