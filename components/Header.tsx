@@ -13,35 +13,36 @@ export default function Header() {
             <div className="flex justify-between h-16">
               <div className="flex px-2 lg:px-0">
                 <div className="flex-shrink-0 flex items-center">
-                  <img
-                    className="hidden lg:block h-12 mt-4 w-auto"
-                    src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Jysk_logo.svg"
-                    alt="Workflow"
-                  />
+                  <a href="/">
+                    <img
+                      className="hidden lg:block h-12 mt-4 w-auto"
+                      src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Jysk_logo.svg"
+                      alt="JYSK"
+                    />
+                  </a>
                 </div>
-                <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
-                  {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
+                <div className="hidden lg:ml-6 lg:flex lg:space-x-8 mt-2">
                   <a
                     href="/Products/electronics"
-                    className="border-color-text-primary text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium focus:text-color-text-primary focus:border-color-text-primary "
                   >
                     Electronics
                   </a>
                   <a
                     href="/Products/jewelery"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium focus:text-color-text-primary focus:border-color-text-primary "
                   >
                     Jewelery
                   </a>
                   <a
                     href="/Products/men's clothing"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium focus:text-color-text-primary focus:border-color-text-primary "
                   >
                     Mens-clothing
                   </a>
                   <a
                     href="/Products/women's clothing"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium focus:text-color-text-primary focus:border-color-text-primary "
                   >
                     Womens-clothing
                   </a>
