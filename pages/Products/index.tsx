@@ -1,6 +1,6 @@
-import Image from "next/image";
+import Product from "../../components/Product";
 
-type ProductResp = {
+type ProductsProps = {
   products: [
     {
       id: number;
@@ -9,26 +9,26 @@ type ProductResp = {
       category: string;
       description: string;
       image: string;
+      rating: {
+        rate: number;
+        count: number;
+      };
     }
   ];
 };
 
-export default function Products({ products }: ProductResp) {
+export default function Products({ products }: ProductsProps) {
   return (
-    <div>
-      <h1>Products</h1>
-      {products.map((product) => (
-        <div key={product.id}>
-          <h1>{product.title}</h1>
-          <h1>{product.price}</h1>
-          <Image
-            src={product.image}
-            alt="Vercel Logo"
-            width={500}
-            height={500}
-          />
+    <div className="bg-white">
+      <div className="max-w-7xl mx-auto overflow-hidden sm:px-6 lg:px-8">
+        <h2 className="sr-only">Products</h2>
+
+        <div className="-mx-px border-l border-gray-200 grid grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
+          {products.map((product) => (
+            <Product product={product} />
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 }
