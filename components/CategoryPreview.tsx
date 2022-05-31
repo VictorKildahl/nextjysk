@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 type categoriesProps = {
   categories: [
     {
@@ -35,10 +38,11 @@ export default function CategoryPreview({ categories }: categoriesProps) {
                     className="relative w-56 h-80 rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto"
                   >
                     <span aria-hidden="true" className="absolute inset-0">
-                      <img
+                      <Image
                         src={category.imageSrc}
-                        alt=""
+                        alt="Cateogry image"
                         className="w-full h-full object-center object-cover"
+                        layout="fill"
                       />
                     </span>
                     <span
