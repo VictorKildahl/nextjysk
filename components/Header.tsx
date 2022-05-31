@@ -23,7 +23,7 @@ export default function Header() {
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   <a
                     href="#"
-                    className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className="border-color-text-primary text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     Electronics
                   </a>
@@ -152,28 +152,28 @@ export default function Header() {
               {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800" */}
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="bg-indigo-50 border-rgb-20-60-138 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                href="/Products"
+                className="bg-indigo-50 border-rgb-20-60 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 Dashboard
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/Products"
                 className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 Team
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/Products"
                 className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 Projects
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/Products"
                 className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 Calendar
