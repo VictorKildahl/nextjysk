@@ -23,7 +23,7 @@ export default function ProductTest({ product }: ProductProps) {
       <ArticleImage image={product.image} />
       <div className="pt-10 pb-4 text-center">
         <h3 className="text-sm font-medium text-gray-900">
-          <Link href={`/Products/${product.id}`}>
+          <Link href={`/Products/${product.category}/${product.id}`}>
             <a>
               <span aria-hidden="true" className="absolute inset-0" />
               {product.title}

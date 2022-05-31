@@ -1,6 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-
 type categoriesProps = {
   categories: [
     {
@@ -14,58 +11,32 @@ type categoriesProps = {
 export default function CategoryPreview({ categories }: categoriesProps) {
   return (
     <div className="bg-white">
-      <div className="py-16 sm:py-24 xl:max-w-7xl xl:mx-auto xl:px-8">
-        <div className="px-4 sm:px-6 sm:flex sm:items-center sm:justify-between lg:px-8 xl:px-0">
-          <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto py-16 sm:py-24 lg:py-32 lg:max-w-none">
+          <h2 className="text-2xl font-extrabold text-gray-900">
             Shop by Category
           </h2>
-          {/* <a
-            href="#"
-            className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
-          >
-            Browse all categories<span aria-hidden="true"> &rarr;</span>
-          </a> */}
-        </div>
 
-        <div className="mt-4 flow-root">
-          <div className="-my-2">
-            <div className="box-content py-2 relative h-80 overflow-x-auto xl:overflow-visible">
-              <div className="absolute min-w-screen-xl px-4 flex space-x-8 sm:px-6 lg:px-8 xl:relative xl:px-0 xl:space-x-0 xl:grid xl:grid-cols-5 xl:gap-x-8">
-                {categories.map((category) => (
-                  <a
-                    key={category.name}
-                    href={category.id}
-                    className="relative w-56 h-80 rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto"
-                  >
-                    <span aria-hidden="true" className="absolute inset-0">
-                      <img
-                        src={category.imageSrc}
-                        alt="Cateogry image"
-                        className="w-full h-full object-center object-cover"
-                      />
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"
-                    />
-                    <span className="relative mt-auto text-center text-xl font-bold text-white">
-                      {category.name}
-                    </span>
+          <div className="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-4 lg:gap-x-6">
+            {categories.map((category) => (
+              <div key={category.name} className="group relative">
+                <div className="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+                  <img
+                    src={category.imageSrc}
+                    alt="Cateogry image"
+                    className="w-full h-full object-center object-cover"
+                  />
+                </div>
+                <h3 className="mt-6 text-sm text-gray-500">
+                  <a href={category.id}>
+                    <span className="absolute inset-0" />
+                    {category.name}
                   </a>
-                ))}
+                </h3>
               </div>
-            </div>
+            ))}
           </div>
         </div>
-
-        {/* <div className="mt-6 px-4 sm:hidden">
-          <a
-            href="#"
-            className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500"
-          >
-            Browse all categories<span aria-hidden="true"> &rarr;</span>
-          </a>
-        </div> */}
       </div>
     </div>
   );

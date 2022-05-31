@@ -33,3 +33,5 @@ module.exports = {
   },
   plugins: [require("@tailwindcss/aspect-ratio")],
 };
+
+// purge, fonts, jit

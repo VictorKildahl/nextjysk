@@ -1,5 +1,6 @@
 import CategoryPreview from "../components/CategoryPreview";
 import Header from "../components/Header";
+import Promo from "../components/Promo";
 
 export default function Home() {
   const categories = [
@@ -28,6 +29,7 @@ export default function Home() {
 
   return (
     <>
+      <Promo></Promo>
       <CategoryPreview categories={categories}></CategoryPreview>
     </>
   );
