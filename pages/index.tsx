@@ -1,4 +1,5 @@
 import CategoryPreview from "../components/CategoryPreview";
+import Header from "../components/Header";
 
 export default function Home() {
   const categories = [
@@ -27,6 +28,7 @@ export default function Home() {
 
   return (
     <>
+      <Header></Header>
       <CategoryPreview categories={categories}></CategoryPreview>
     </>
   );
