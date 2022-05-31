@@ -1,4 +1,4 @@
-import Product from "../../components/Product";
+import ProductTest from "../../../components/Product";
 
 type ProductsProps = {
   products: [
@@ -17,7 +17,7 @@ type ProductsProps = {
   ];
 };
 
-export default function Products({ products }: ProductsProps) {
+export default function Category({ products }: ProductsProps) {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto overflow-hidden sm:px-6 lg:px-8">
@@ -25,7 +25,7 @@ export default function Products({ products }: ProductsProps) {
 
         <div className="-mx-px border-l border-gray-200 grid grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
           {products.map((product) => (
-            <Product product={product} />
+            <ProductTest product={product} />
           ))}
         </div>
       </div>
@@ -33,11 +33,27 @@ export default function Products({ products }: ProductsProps) {
   );
 }
 
-export async function getStaticProps() {
-  const req = await fetch("https://fakestoreapi.com/products");
+export async function getStaticProps({ params }) {
+  const req = await fetch(
+    `https://fakestoreapi.com/products/category/${params.category}`
+  );
   const data = await req.json();
 
   return {
     props: { products: data },
+  };
+}
+
+export async function getStaticPaths() {
+  const req = await fetch(`https://fakestoreapi.com/products/categories`);
+  const data = await req.json();
+
+  const paths = data.map((category) => {
+    return { params: { category: category } };
+  });
+
+  return {
+    paths,
+    fallback: false,
   };
 }
