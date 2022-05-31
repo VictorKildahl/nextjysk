@@ -17,7 +17,7 @@ type ProductProps = {
   };
 };
 
-export default function Product({ product }: ProductProps) {
+export default function ProductTest({ product }: ProductProps) {
   return (
     <div
       key={product.id}
