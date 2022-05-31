@@ -19,10 +19,7 @@ type ProductProps = {
 
 export default function ProductTest({ product }: ProductProps) {
   return (
-    <div
-      key={product.id}
-      className="group relative p-4 border-r border-b border-gray-200 sm:p-6"
-    >
+    <div key={product.id} className="group relative p-4 sm:p-6">
       <ArticleImage image={product.image} />
       <div className="pt-10 pb-4 text-center">
         <h3 className="text-sm font-medium text-gray-900">

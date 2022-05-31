@@ -28,7 +28,6 @@ export default function Home() {
 
   return (
     <>
-      <Header></Header>
       <CategoryPreview categories={categories}></CategoryPreview>
     </>
   );

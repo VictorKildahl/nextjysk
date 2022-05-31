@@ -6,7 +6,7 @@ import classNames from "classnames";
 
 export default function Header() {
   return (
-    <Disclosure as="nav" className="bg-white shadow">
+    <Disclosure as="nav" className="bg-white shadow pb-16">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
@@ -22,25 +22,25 @@ export default function Header() {
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   <a
-                    href="#"
+                    href="/Products/electronics"
                     className="border-color-text-primary text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     Electronics
                   </a>
                   <a
-                    href="#"
+                    href="/Products/jewelery"
                     className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     Jewelery
                   </a>
                   <a
-                    href="#"
+                    href="/Products/men's clothing"
                     className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     Mens-clothing
                   </a>
                   <a
-                    href="Products"
+                    href="/Products/women's clothing"
                     className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     Womens-clothing
