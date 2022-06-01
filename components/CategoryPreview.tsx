@@ -1,11 +1,9 @@
 type categoriesProps = {
-  categories: [
-    {
-      name: string;
-      id: string;
-      imageSrc: string;
-    }
-  ];
+  categories: {
+    name: string;
+    id: string;
+    imageSrc: string;
+  }[];
 };
 
 export default function CategoryPreview({ categories }: categoriesProps) {

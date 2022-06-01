@@ -1,5 +1,4 @@
 import CategoryPreview from "../components/CategoryPreview";
-import Header from "../components/Header";
 import Promo from "../components/Promo";
 
 export default function Home() {

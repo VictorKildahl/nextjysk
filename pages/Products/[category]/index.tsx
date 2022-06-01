@@ -22,7 +22,7 @@ export default function Category({ products }: ProductsProps) {
     <div className="bg-white">
       <div className="max-w-7xl mx-auto overflow-hidden sm:px-6 lg:px-8">
         <div className="-mx-px border-gray-200 grid grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
-          {products.map((product) => (
+          {products?.map((product) => (
             <ProductTest product={product} />
           ))}
         </div>
@@ -31,7 +31,7 @@ export default function Category({ products }: ProductsProps) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
   const req = await fetch(
     `https://fakestoreapi.com/products/category/${params.category}`
   );
@@ -46,7 +46,7 @@ export async function getStaticPaths() {
   const req = await fetch(`https://fakestoreapi.com/products/categories`);
   const data = await req.json();
 
-  const paths = data.map((category) => {
+  const paths = data.map((category: any) => {
     return { params: { category: category } };
   });
 

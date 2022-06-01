@@ -1,38 +1,11 @@
-import { useState } from "react";
-import {
-  CheckIcon,
-  QuestionMarkCircleIcon,
-  StarIcon,
-} from "@heroicons/react/solid";
-import { RadioGroup } from "@headlessui/react";
 import { ShieldCheckIcon } from "@heroicons/react/outline";
+import { CheckIcon, StarIcon } from "@heroicons/react/solid";
 import classNames from "classnames";
-
-// const product = {
-//   name: "Everyday Ruck Snack",
-//   href: "#",
-//   price: "$220",
-//   description:
-//     "Don't compromise on snack-carrying capacity with this lightweight and spacious bag. The drawstring top keeps all your favorite chips, crisps, fries, biscuits, crackers, and cookies secure.",
-//   imageSrc:
-//     "https://tailwindui.com/img/ecommerce-images/product-page-04-featured-product-shot.jpg",
-//   imageAlt:
-//     "Model wearing light green backpack with black canvas straps and front zipper pouch.",
-//   breadcrumbs: [
-//     { id: 1, name: "Travel", href: "#" },
-//     { id: 2, name: "Bags", href: "#" },
-//   ],
-//   sizes: [
-//     { name: "18L", description: "Perfect for a reasonable amount of snacks." },
-//     { name: "20L", description: "Enough room for a serious amount of snacks." },
-//   ],
-// };
-// const reviews = { average: 4, totalCount: 1624 };
 
 type DetailsProps = {
   product: {
     id: number;
-    title: string;
+    title?: string;
     price: string;
     category: string;
     description: string;
@@ -51,9 +24,11 @@ export default function Details({ product }: DetailsProps) {
         {/* Product details */}
         <div className="lg:max-w-lg lg:self-end">
           <div className="mt-4">
-            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              {product.title}
-            </h1>
+            {product?.title && (
+              <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                {product?.title}
+              </h1>
+            )}
           </div>
 
           <section aria-labelledby="information-heading" className="mt-4">
@@ -63,7 +38,7 @@ export default function Details({ product }: DetailsProps) {
 
             <div className="flex items-center">
               <p className="text-lg text-gray-900 sm:text-xl">
-                {product.price}
+                {product?.price}
               </p>
 
               <div className="ml-4 pl-4 border-l border-gray-300">
@@ -75,7 +50,7 @@ export default function Details({ product }: DetailsProps) {
                         <StarIcon
                           key={rating}
                           className={classNames(
-                            product.rating.rate > rating
+                            product?.rating.rate > rating
                               ? "text-yellow-400"
                               : "text-gray-300",
                             "h-5 w-5 flex-shrink-0"
@@ -85,18 +60,18 @@ export default function Details({ product }: DetailsProps) {
                       ))}
                     </div>
                     <p className="sr-only">
-                      {product.rating.count} out of 5 stars
+                      {product?.rating.count} out of 5 stars
                     </p>
                   </div>
                   <p className="ml-2 text-sm text-gray-500">
-                    {product.rating.count} reviews
+                    {product?.rating.count} reviews
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="mt-4 space-y-6">
-              <p className="text-base text-gray-500">{product.description}</p>
+              <p className="text-base text-gray-500">{product?.description}</p>
             </div>
 
             <div className="mt-6 flex items-center">
@@ -115,7 +90,7 @@ export default function Details({ product }: DetailsProps) {
         <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
           <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
             <img
-              src={product.image}
+              src={product?.image}
               alt="Product image"
               className="w-full h-full object-center object-cover"
             />
@@ -157,7 +132,7 @@ export default function Details({ product }: DetailsProps) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
   const req = await fetch(
     `https://fakestoreapi.com/products/${params.details}`
   );
@@ -172,7 +147,7 @@ export async function getStaticPaths() {
   const req = await fetch(`https://fakestoreapi.com/products`);
   const data = await req.json();
 
-  const paths = data.map((product) => {
+  const paths = data.map((product: any) => {
     return `/Products/${product.category}/${product.id}`;
   });
 

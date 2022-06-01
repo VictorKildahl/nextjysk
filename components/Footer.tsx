@@ -12,7 +12,7 @@ const navigation = {
     {
       name: "Facebook",
       href: "https://www.facebook.com/JYSK.dk",
-      icon: (props) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -25,7 +25,7 @@ const navigation = {
     {
       name: "Instagram",
       href: "https://www.instagram.com/jyskdk/",
-      icon: (props) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -38,7 +38,7 @@ const navigation = {
     {
       name: "GitHub",
       href: "https://github.com/VictorKildahl/nextjysk",
-      icon: (props) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
