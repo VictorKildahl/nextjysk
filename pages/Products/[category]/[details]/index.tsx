@@ -101,7 +101,7 @@ export default function Details({ product }: DetailsProps) {
 
             <div className="mt-6 flex items-center">
               <CheckIcon
-                className="flex-shrink-0 w-5 h-5 text-green-500"
+                className="flex-shrink-0 w-5 h-5 text-stock-in-stock"
                 aria-hidden="true"
               />
               <p className="ml-2 text-sm text-gray-500">
@@ -133,7 +133,7 @@ export default function Details({ product }: DetailsProps) {
               <div className="mt-10">
                 <button
                   type="submit"
-                  className="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
+                  className="w-full bg-primary border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
                 >
                   Add to bag
                 </button>

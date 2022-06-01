@@ -32,7 +32,7 @@ export default function ProductTest({ product }: ProductProps) {
         </h3>
         <Review rate={product.rating.rate} count={product.rating.count} />
         <p className="mt-4 text-base font-medium text-gray-900">
-          {product.price}
+          {product.price}$
         </p>
       </div>
     </div>

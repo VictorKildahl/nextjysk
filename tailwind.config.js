@@ -49,6 +49,3 @@ module.exports = {
   },
   plugins: [require("@tailwindcss/aspect-ratio")],
 };
-
-// fonts, https://hypercolor.dev/
-// open sans, sans-serif
