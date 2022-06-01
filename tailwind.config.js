@@ -1,37 +1,54 @@
+const { spawnSync } = require("child_process");
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  mode: "jit",
+  purge: {
+    enabled: true,
+  },
   theme: {
     extend: {
       colors: {
-        "color-text-primary": "#143c8a",
-        "color-text-primary-dark": "#053775",
-        "color-text-primary-light": "#58cdf4",
-        "color-text-danger": "#e36a6a",
-        "color-text-warning": "#ffd800",
-        "color-text-info": "#4ba4df",
-        "color-text-success": "#04b51d",
-        "color-text-green-cc": "#46c292",
-        "color-text-blue-oo": "#4682c2",
-        "color-stock": "#4e8929",
-        "color-out-of-stock": "#cf0013",
-        "color-gradient-blue-1": "#034795",
-        "color-gradient-blue-2": "#143c8a",
-        "color-gradient-white-1": "#fff",
-        "color-gradient-white-2": "#f8f8f8",
-        "color-gradient-gray-1": "#f8f8f8",
-        "color-gradient-gray-2": "#e1e1e1",
-        "color-black": "#000",
-        "color-dark": "#333",
-        "color-gray": "#454545",
-        "color-light": "#f8f8f8",
-        "color-light": "#ffffff",
+        primary: {
+          light: "#58cdf4",
+          DEFAULT: "#143c8a",
+          dark: "#053775",
+        },
+        secondary: {
+          "green-cc": "#46c292",
+          "blue-oo": "#4682c2",
+          black: "#000",
+          dark: "#333",
+          gray: "#454545",
+          light: "#f8f8f8",
+          white: "#ffffff",
+        },
+        status: {
+          danger: "#e36a6a",
+          warning: "#ffd800",
+          info: "#4ba4df",
+          success: "#04b51d",
+        },
+        stock: {
+          "in-stock": "#4e8929",
+          "out-of-stock": "#cf0013",
+        },
+        gradient: {
+          "blue-to": "#034795",
+          "blue-from": "#143c8a",
+          "white-to": "#fff",
+          "white-from": "#f8f8f8",
+          "gray-to": "#f8f8f8",
+          "gray-from": "#e1e1e1",
+        },
       },
     },
   },
   plugins: [require("@tailwindcss/aspect-ratio")],
 };
 
-// purge, fonts, jit
+// fonts, https://hypercolor.dev/
+// open sans, sans-serif
